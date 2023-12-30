@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - WaypointNode
+  - EnemyWalkable
+  - Target
+  - SpawnLocation
+  - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -12,6 +18,7 @@ TagManager:
   - Water
   - UI
   - Buildable
+  - EnemyWalkable
   - 
   - 
   - 
@@ -35,8 +42,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - BuildGrid
   m_SortingLayers:
   - name: Default
     uniqueID: 0
