@@ -12,23 +12,6 @@ public class Grid : MonoBehaviour
     public float tileSizeX = 1.0f; // Adjustable grid tile size in the X direction
     public float tileSizeZ = 1.0f;
 
-    void Update()
-    {
-        // Check for mouse input
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            // Perform the raycast
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, hitLayers))
-            {
-                Debug.Log("Hit grid at: " + hit.point);
-                // Do something with the hit point on the grid
-            }
-        }
-    }
-
     void OnDrawGizmos()
     {
         if (showGizmos)

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface ITask
 {
-    public void PerformTask();
+    public void PerformTask(TaskWorker worker);
     public bool TaskIsCompleted();
 }

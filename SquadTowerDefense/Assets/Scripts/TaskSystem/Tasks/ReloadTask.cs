@@ -3,8 +3,8 @@ using UnityEngine;
 public class ReloadTask : ITask
 {
     private bool isTaskCompleted = false;
-    
-    public void PerformTask()
+
+    public void PerformTask(TaskWorker worker)
     {
         Debug.Log("Performing the reload task.");
     }

@@ -9,6 +9,7 @@ public class TaskManager : MonoBehaviour
     private static TaskManager _instance;
     
     private Queue<ITask> tasks = new Queue<ITask>();
+    private Queue<TaskWorker> workers = new Queue<TaskWorker>();
     
     public static TaskManager Instance
     {
@@ -22,6 +23,11 @@ public class TaskManager : MonoBehaviour
 
             return _instance;
         }
+    }
+
+    public void AddWorkerToQueue(TaskWorker worker)
+    {
+        workers.Enqueue(worker);
     }
 
     public void AddTask(ITask task)
@@ -44,11 +50,12 @@ public class TaskManager : MonoBehaviour
 
     private void Update()
     {
-        if (tasks.Count > 0)
+        if (workers.Count > 0 && tasks.Count > 0)
         {
+            TaskWorker worker = workers.Dequeue();
             ITask task = tasks.Dequeue();
-            
-            task.PerformTask();
+
+            task.PerformTask(worker);
         }
     }
 }
